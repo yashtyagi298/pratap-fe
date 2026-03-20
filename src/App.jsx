@@ -1,6 +1,6 @@
 import { Contact } from "lucide-react";
 import About from "./components/About";
-import ContactPopup from "./components/contactPopUp";
+
 import Footer from "./components/Footer";
 import Hero from "./components/hero";
 import Marquee from "./components/Marquee";
