@@ -19,7 +19,7 @@ Email: ${email}
 Looking For: ${type}
 Requirement: ${msg}`;
 
-    const url = `https://wa.me/919368338064?text=${encodeURIComponent(text)}`;
+    const url = `https://wa.me/919873562419?text=${encodeURIComponent(text)}`;
 
     window.open(url, "_blank");
 
