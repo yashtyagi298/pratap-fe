@@ -33,7 +33,7 @@ const data = [
   },
 ];
 
-const WhyChoose = () => {
+const Why = () => {
   return (
     <section className="bg-[#060f1e] px-5 md:px-12 py-20 relative overflow-hidden">
 
@@ -110,4 +110,4 @@ const WhyChoose = () => {
   );
 };
 
-export default WhyChoose;
+export default Why;

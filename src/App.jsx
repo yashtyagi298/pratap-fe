@@ -11,8 +11,8 @@ import Contact1 from "./components/Contact1";
 
 import Hero from "./components/Hero.jsx"
 import Navbar from "./components/Navbar";
-import WhyChoose from "./components/Whychoose.jsx";
 import Serve from "./components/Serve.jsx";
+import Why from "./components/Why.jsx";
 
 
 
@@ -27,7 +27,7 @@ export default function App() {
     <Marquee/>
    <Serve/>
     <About/>
-    <WhyChoose/>
+    <Why/>
     <QuickEnquiry/>
     <Contact1/>
     <Footer/>
