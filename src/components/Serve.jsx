@@ -31,7 +31,7 @@ const services = [
   },
 ];
 
-const Services = () => {
+const Serve = () => {
   return (
     <section id="services" className="bg-[#0b1a30] px-5 md:px-10 py-20">
 
@@ -102,4 +102,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default Serve;
