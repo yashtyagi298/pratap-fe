@@ -23,7 +23,15 @@ const features = [
   },
 ];
 
+
 const About = () => {
+  // ✅ WhatsApp Redirect
+  const handleWhatsApp = () => {
+    const text =
+      "I want consultation about property in Noida & Greater Noida";
+    const url = `https://wa.me/919873562419?text=${encodeURIComponent(text)}`;
+    window.open(url, "_blank");
+  };
   return (
     <section id="about" className="bg-[#060f1e] px-5 md:px-12 py-20">
 
@@ -112,7 +120,7 @@ const About = () => {
           </div>
 
           {/* BUTTON */}
-          <button className="bg-yellow-400 text-black px-6 py-3 rounded-md text-sm font-semibold hover:scale-105 hover:shadow-lg transition">
+          <button onClick={handleWhatsApp} className="bg-yellow-400 text-black px-6 py-3 rounded-md text-sm font-semibold hover:scale-105 hover:shadow-lg transition">
             Talk to Our Experts →
           </button>
 

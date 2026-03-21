@@ -20,7 +20,7 @@ Looking For: ${form.type}
 Budget: ${form.budget}
 Requirement: ${form.msg}`;
 
-    const url = `https://wa.me/919368338064?text=${encodeURIComponent(text)}`;
+    const url = `https://wa.me/919873562419?text=${encodeURIComponent(text)}`;
 
     window.open(url, "_blank");
   };

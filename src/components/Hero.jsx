@@ -16,8 +16,24 @@ const Hero = () => {
     return () => clearInterval(i);
   }, []);
 
+  // ✅ WhatsApp Redirect
+  const handleWhatsApp = () => {
+    const text =
+      "I want free consultation about property in Noida & Greater Noida";
+    const url = `https://wa.me/919873562419?text=${encodeURIComponent(text)}`;
+    window.open(url, "_blank");
+  };
+
+  // ✅ Smooth Scroll to Services
+  const scrollToServices = () => {
+    const el = document.getElementById("services");
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <section id="home" className="relative h-screen flex items-center ">
+    <section id="home" className="relative h-screen flex items-center">
 
       {/* SLIDER */}
       {slides.map((img, i) => (
@@ -30,8 +46,8 @@ const Hero = () => {
         />
       ))}
 
-      {/* OVERLAY */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#060f1e]/90 via-[#060f1e]/50 to-transparent"></div>
+      {/* ✅ OVERLAY FIX (IMPORTANT) */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#060f1e]/90 via-[#060f1e]/50 to-transparent pointer-events-none"></div>
 
       {/* CONTENT */}
       <div className="relative z-10 px-6 md:px-12 max-w-2xl text-white">
@@ -44,10 +60,9 @@ const Hero = () => {
           </span>
         </div>
 
-        {/* HEADING FIXED 🔥 */}
+        {/* HEADING */}
         <h1 className="font-serif text-4xl md:text-6xl leading-tight mb-5">
 
-          {/* Desktop ONE LINE */}
           <span className="hidden md:block">
             Welcome to <br />
             <span className="text-yellow-400 italic">
@@ -55,7 +70,6 @@ const Hero = () => {
             </span>
           </span>
 
-          {/* Mobile STACK */}
           <span className="md:hidden">
             Welcome to <br />
             <span className="text-yellow-400 italic">Pratap</span> <br />
@@ -72,13 +86,23 @@ const Hero = () => {
 
         {/* BUTTONS */}
         <div className="flex gap-4 flex-wrap">
-          <button className="bg-yellow-400 text-black px-6 py-3 rounded-md font-semibold hover:scale-105 transition">
+
+          {/* ✅ WhatsApp Button */}
+          <button
+            onClick={handleWhatsApp}
+            className="bg-yellow-400 text-black px-6 py-3 rounded-md font-semibold hover:scale-105 transition"
+          >
             Book Free Consultation
           </button>
 
-          <button className="border border-white/40 px-6 py-3 rounded-md hover:border-yellow-400 hover:text-yellow-400 transition">
+          {/* ✅ Scroll Button */}
+          <button
+            onClick={scrollToServices}
+            className="border border-white/40 px-6 py-3 rounded-md hover:border-yellow-400 hover:text-yellow-400 transition"
+          >
             Explore Services →
           </button>
+
         </div>
 
       </div>

@@ -17,7 +17,7 @@ const Navbar = () => {
   // ✅ WhatsApp Redirect Function
   const handleWhatsApp = () => {
     const text = "I want free consultation about property in Noida & Greater Noida";
-    const url = `https://wa.me/919368338064?text=${encodeURIComponent(text)}`;
+    const url = `https://wa.me/919873562419?text=${encodeURIComponent(text)}`;
     window.open(url, "_blank");
   };
   const scrollToSection = (id) => {
