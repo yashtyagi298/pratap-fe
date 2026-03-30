@@ -74,7 +74,7 @@ const HowWeWork = () => {
                       className="border-b border-yellow-500/10 hover:bg-[#132850] transition"
                     >
                       <td className="px-5 py-4">{item[0]}</td>
-                      <td className="px-5 py-4 text-yellow-400 font-bold font-['Cormorant_Garamond'] text-lg">
+                      <td className="px-5 py-4 text-yellow-400 font-extrabold font-['Cormorant_Garamond'] text-lg">
                         {item[1]}
                       </td>
                     </tr>
@@ -83,10 +83,22 @@ const HowWeWork = () => {
               </table>
             </div>
 
-{/* ✅ YAHAN ADD KARNA HAI */}
-<p className="mt-4 text-[12px] text-yellow-400 tracking-[1px]">
-  * If your property vacates within 11 months, we will rent it out again free of cost.
-</p>
+{/* NOTES */}
+<div className="mt-5 bg-[#0e2040] border border-yellow-500/10 rounded-lg p-4 space-y-2">
+
+  <p className="text-[12px] text-gray-300 leading-relaxed">
+    <span className="text-yellow-400 font-semibold">•</span>{" "}
+    If your property vacates within 11 months, we will rent it out again{" "}
+    <span className="text-yellow-400 font-semibold">free of cost</span>.
+  </p>
+
+  <p className="text-[12px] text-gray-300 leading-relaxed">
+    <span className="text-yellow-400 font-semibold">•</span>{" "}
+    On renewal of agreement with the same tenant, our charges will be{" "}
+    <span className="text-yellow-400 font-semibold">₹2,500</span> for next tenancy.
+  </p>
+
+</div>
           </div>
         </div>
 
