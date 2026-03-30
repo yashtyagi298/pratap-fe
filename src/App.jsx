@@ -16,6 +16,7 @@ import Why from "./components/Why.jsx";
 import HowWeWork from "./components/HowweWork.jsx";
 import Navbar from "./components/Navbar.jsx";
 import ContactPopup from "./components/ContactPopup.jsx";
+import Owner from "./components/Owner.jsx";
 
 
 
@@ -25,6 +26,7 @@ export default function App() {
    <>
       <Navbar/>
       <Hero/>
+      <Owner/>
       <Ticker/>
     <Stats/>
     <Marquee/>

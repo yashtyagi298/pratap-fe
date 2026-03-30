@@ -1,32 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Facebook, Instagram, Youtube } from "lucide-react";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
-  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 60);
     };
     window.addEventListener("scroll", handleScroll);
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const handleWhatsApp = () => {
-    const text = "I want free consultation about property in Noida & Greater Noida";
-    const url = `https://wa.me/919873562419?text=${encodeURIComponent(text)}`;
-    window.open(url, "_blank");
-  };
-
-  const scrollToSection = (id) => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-      setOpen(false);
-    }
-  };
 
   return (
     <nav
@@ -36,95 +20,60 @@ const Navbar = () => {
           : "bg-transparent"
       }`}
     >
-      <div className="flex items-center justify-between px-6 md:px-12 h-[70px]">
+      <div className="flex items-center justify-between px-4 md:px-12 h-[70px]">
 
-        {/* LOGO */}
+        {/* LEFT (LOGO) */}
         <div className="flex items-center gap-3">
 
-          <div className="w-[34px] h-[34px] bg-yellow-400 rounded-md flex items-center justify-center font-bold text-[#060f1e] font-serif text-sm">
+          {/* PA BOX */}
+          <div className="w-[32px] h-[32px] bg-yellow-400 rounded-md flex items-center justify-center font-bold text-[#060f1e] font-serif text-sm">
             PA
           </div>
 
-          <div className="flex flex-col justify-center leading-tight">
-
-            {/* Desktop */}
-            <h1 className="hidden md:block font-serif text-[14px] font-semibold text-white tracking-wide">
-              Pratap<span className="ml-1">Associates</span>
+          {/* TEXT */}
+          <div className="flex flex-col leading-none">
+            <h1 className="font-serif text-[14px] md:text-[16px] text-white font-semibold">
+              Pratap Associates
             </h1>
 
-            {/* Mobile */}
-            <h1 className="md:hidden font-serif text-[15px] font-semibold text-white tracking-wide">
-              Pratap<span className="ml-1">Associates</span>
-            </h1>
-
-            {/* ✅ MODERN LOCATION TEXT */}
-            <span className="text-[10px] tracking-[1.8px] uppercase text-yellow-400 mt-[3px] font-normal">
-              Noida · Greater Noida
+            <span className="text-yellow-400 text-[10px] md:text-[11px] tracking-[1.5px] uppercase mt-[2px]">
+              Noida - Greater Noida
             </span>
-
           </div>
         </div>
 
-        {/* MENU */}
-        <ul className="hidden md:flex gap-8 text-[12px] uppercase tracking-wide text-gray-300">
-          {["Home", "Services", "About Us", "Connect Us"].map((item) => (
-            <li
-              key={item}
-              className="relative group cursor-pointer hover:text-white"
-            >
-              {item}
-              <span className="absolute left-0 -bottom-1 w-0 h-[1px] bg-yellow-400 transition-all group-hover:w-full"></span>
-            </li>
-          ))}
-        </ul>
-
-        {/* BUTTON */}
-        <div className="hidden md:block">
-          <button
-            onClick={handleWhatsApp}
-            className="border border-yellow-400 text-yellow-400 px-4 py-2 text-[11px] rounded-md uppercase hover:bg-yellow-400 hover:text-black transition"
-          >
-            Free Consultation
-          </button>
+        {/* CENTER MENU (ONLY DESKTOP 👇) */}
+        <div className="hidden md:flex gap-8 text-[12px] uppercase tracking-wide text-gray-300">
+          <span className="cursor-pointer hover:text-white">Services</span>
+          <span className="cursor-pointer hover:text-white">Pricing</span>
+          <span className="cursor-pointer hover:text-white">About</span>
+          <span className="cursor-pointer hover:text-white">Contact</span>
         </div>
 
-        {/* MOBILE MENU */}
-        <div className="md:hidden text-white">
-          <button onClick={() => setOpen(!open)}>
-            {open ? <X size={26} /> : <Menu size={26} />}
-          </button>
+        {/* RIGHT (SOCIAL ICONS) */}
+        <div className="flex items-center gap-2">
+
+          <a href="https://www.facebook.com/pratapassociate">
+            <div className="w-[32px] h-[32px] flex items-center justify-center rounded-md bg-blue-600">
+              <Facebook size={16} className="text-white" />
+            </div>
+          </a>
+
+          <a href="https://www.instagram.com/pratapassociates">
+            <div className="w-[32px] h-[32px] flex items-center justify-center rounded-md bg-pink-500">
+              <Instagram size={16} className="text-white" />
+            </div>
+          </a>
+
+          <a href="https://www.youtube.com/@pratapassociates">
+            <div className="w-[32px] h-[32px] flex items-center justify-center rounded-md bg-red-600">
+              <Youtube size={16} className="text-white" />
+            </div>
+          </a>
+
         </div>
+
       </div>
-
-      {/* MOBILE DROPDOWN */}
-      {open && (
-        <div className="md:hidden bg-[#060f1e] px-6 pb-6 border-t border-yellow-500/10">
-          <ul className="flex flex-col gap-5 text-sm text-gray-300 mt-4">
-            {[
-              { name: "Home", id: "home" },
-              { name: "Services", id: "services" },
-              { name: "About Us", id: "about" },
-              { name: "Connect Us", id: "contact" },
-            ].map((item) => (
-              <li
-                key={item.name}
-                onClick={() => scrollToSection(item.id)}
-                className="relative group cursor-pointer hover:text-white"
-              >
-                {item.name}
-                <span className="absolute left-0 -bottom-1 w-0 h-[1px] bg-yellow-400 transition-all group-hover:w-full"></span>
-              </li>
-            ))}
-          </ul>
-
-          <button
-            onClick={handleWhatsApp}
-            className="mt-5 w-full border border-yellow-400 text-yellow-400 py-2 rounded-md hover:bg-yellow-400 hover:text-black transition"
-          >
-            Free Consultation
-          </button>
-        </div>
-      )}
     </nav>
   );
 };
