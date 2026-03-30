@@ -25,7 +25,7 @@ const Owner = () => {
 
           {/* NAME */}
           <h2 className="font-serif text-2xl md:text-3xl text-white font-semibold mb-3">
-            Mr. Pratap Singh
+            Mr. Suresh Pratap
           </h2>
 
           {/* TITLE */}
