@@ -12,6 +12,14 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // ✅ SCROLL FUNCTION
+  const scrollToSection = (id) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
@@ -23,14 +31,15 @@ const Navbar = () => {
       <div className="flex items-center justify-between px-4 md:px-12 h-[70px]">
 
         {/* LEFT (LOGO) */}
-        <div className="flex items-center gap-3">
+        <div
+          onClick={() => scrollToSection("home")}
+          className="flex items-center gap-3 cursor-pointer"
+        >
 
-          {/* PA BOX */}
           <div className="w-[32px] h-[32px] bg-yellow-400 rounded-md flex items-center justify-center font-bold text-[#060f1e] font-serif text-sm">
             PA
           </div>
 
-          {/* TEXT */}
           <div className="flex flex-col leading-none">
             <h1 className="font-serif text-[14px] md:text-[16px] text-white font-semibold">
               Pratap Associates
@@ -42,12 +51,37 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* CENTER MENU (ONLY DESKTOP 👇) */}
+        {/* CENTER MENU */}
         <div className="hidden md:flex gap-8 text-[12px] uppercase tracking-wide text-gray-300">
-          <span className="cursor-pointer hover:text-white">Services</span>
-          <span className="cursor-pointer hover:text-white">Pricing</span>
-          <span className="cursor-pointer hover:text-white">About</span>
-          <span className="cursor-pointer hover:text-white">Contact</span>
+
+          <span
+            onClick={() => scrollToSection("services")}
+            className="cursor-pointer hover:text-white"
+          >
+            Services
+          </span>
+
+          <span
+            onClick={() => scrollToSection("howwework")}
+            className="cursor-pointer hover:text-white"
+          >
+            Pricing
+          </span>
+
+          <span
+            onClick={() => scrollToSection("about")}
+            className="cursor-pointer hover:text-white"
+          >
+            About
+          </span>
+
+          <span
+            onClick={() => scrollToSection("contact")}
+            className="cursor-pointer hover:text-white"
+          >
+            Contact
+          </span>
+
         </div>
 
         {/* RIGHT (SOCIAL ICONS) */}

@@ -36,7 +36,7 @@ export default function App() {
    
     <ContactPopup/>
    <Serve/>
-    <About/>
+  
    
     <QuickEnquiry/>
     <Contact1/>

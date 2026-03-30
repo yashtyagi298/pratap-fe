@@ -91,8 +91,16 @@ const Footer = () => {
         </p>
 
         <p className="text-yellow-400 font-semibold">
-          Made with ♥ in Rahiva Global
-        </p>
+  Made with ♥ in{" "}
+  <a
+    href="https://rahivaglobal.com"   
+    target="_blank"
+    rel="noopener noreferrer"
+    className="underline hover:text-white transition"
+  >
+    Rahiva Global
+  </a>
+</p>
 
       </div>
 

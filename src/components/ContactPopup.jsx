@@ -1,12 +1,22 @@
 import React, { useState, useEffect } from "react";
+import { X } from "lucide-react";
 
 const ContactPopup = () => {
   const [open, setOpen] = useState(false);
 
-  // Auto open after 4 sec (same as HTML)
+  // Auto open after 4 sec
   useEffect(() => {
     const t = setTimeout(() => setOpen(true), 4000);
     return () => clearTimeout(t);
+  }, []);
+
+  // ESC key close (premium UX 🔥)
+  useEffect(() => {
+    const handleKey = (e) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
   }, []);
 
   // WhatsApp submit
@@ -31,7 +41,7 @@ Requirement: ${msg}`;
     const url = `https://wa.me/919873562419?text=${encodeURIComponent(text)}`;
 
     window.open(url, "_blank");
-    setOpen(false); // auto close after submit
+    setOpen(false);
   };
 
   if (!open) return null;
@@ -43,12 +53,14 @@ Requirement: ${msg}`;
     >
       <div className="bg-[#0b1a30] border border-yellow-500/20 rounded-2xl w-[95%] max-w-lg overflow-hidden relative animate-[fadeIn_.3s_ease]">
 
-        {/* CLOSE */}
+        {/* PREMIUM CLOSE BUTTON */}
         <button
           onClick={() => setOpen(false)}
-          className="absolute top-3 right-3 bg-black/40 text-white w-8 h-8 rounded-full hover:bg-yellow-400 hover:text-black transition"
+          className="absolute top-4 right-4 z-10 w-9 h-9 flex items-center justify-center rounded-full 
+          bg-black/60 backdrop-blur border border-white/20 text-white 
+          hover:bg-yellow-400 hover:text-black transition"
         >
-          ✕
+          <X size={18} />
         </button>
 
         {/* IMAGE HEADER */}
@@ -79,30 +91,51 @@ Requirement: ${msg}`;
         <form onSubmit={handleSubmit} className="p-6 flex flex-col gap-4">
 
           <div className="grid grid-cols-2 gap-3">
-            <input name="name" required placeholder="Full Name"
-              className="p-3 bg-[#0e2040] border border-white/10 rounded text-white"/>
-            <input name="phone" required placeholder="Phone"
-              className="p-3 bg-[#0e2040] border border-white/10 rounded text-white"/>
+            <input
+              name="name"
+              required
+              placeholder="Full Name"
+              className="p-3 bg-[#0e2040] border border-white/10 rounded text-white focus:border-yellow-400 outline-none"
+            />
+            <input
+              name="phone"
+              required
+              placeholder="Phone"
+              className="p-3 bg-[#0e2040] border border-white/10 rounded text-white focus:border-yellow-400 outline-none"
+            />
           </div>
 
-          <input name="email" placeholder="Email"
-            className="p-3 bg-[#0e2040] border border-white/10 rounded text-white"/>
+          <input
+            name="email"
+            placeholder="Email"
+            className="p-3 bg-[#0e2040] border border-white/10 rounded text-white focus:border-yellow-400 outline-none"
+          />
 
           <div className="grid grid-cols-2 gap-3">
-            <select name="type" required
-              className="p-3 bg-[#0e2040] border border-white/10 rounded text-white">
+            <select
+              name="type"
+              required
+              className="p-3 bg-[#0e2040] border border-white/10 rounded text-white focus:border-yellow-400 outline-none"
+            >
               <option value="">Select Type</option>
               <option>Residential Rent</option>
               <option>Commercial Rent</option>
               <option>Buy Property</option>
             </select>
 
-            <input name="budget" placeholder="Budget"
-              className="p-3 bg-[#0e2040] border border-white/10 rounded text-white"/>
+            <input
+              name="budget"
+              placeholder="Budget"
+              className="p-3 bg-[#0e2040] border border-white/10 rounded text-white focus:border-yellow-400 outline-none"
+            />
           </div>
 
-          <textarea name="msg" rows="3" placeholder="Your Requirement"
-            className="p-3 bg-[#0e2040] border border-white/10 rounded text-white"/>
+          <textarea
+            name="msg"
+            rows="3"
+            placeholder="Your Requirement"
+            className="p-3 bg-[#0e2040] border border-white/10 rounded text-white focus:border-yellow-400 outline-none"
+          />
 
           <button
             type="submit"

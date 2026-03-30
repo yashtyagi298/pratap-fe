@@ -43,8 +43,8 @@ const Serve = () => {
         <h2 className="font-serif text-2xl md:text-4xl font-semibold text-white mb-3">
           Our Services
         </h2>
-        <p className="text-gray-400 text-sm max-w-md leading-relaxed">
-          We will only charge only 0.5% of deal amount.
+        <p className="text-gray-400 text-lg max-w-md leading-relaxed">
+        We will charge only <span className="text-yellow-400">0.5%</span> of the total deal amount
         </p>
       </div>
 
