@@ -28,13 +28,16 @@ export default function App() {
       <Hero/>
       <Owner/>
       <Ticker/>
-    <Stats/>
-    <Marquee/>
+       <About/>
+        <Marquee/>
+    {/* <Stats/> */}
+   
     <HowWeWork/>
+   
     <ContactPopup/>
    <Serve/>
     <About/>
-    <Why/>
+   
     <QuickEnquiry/>
     <Contact1/>
     <Footer/>

@@ -169,12 +169,7 @@ Requirement: ${form.msg}`;
               />
             </div>
 
-            <input
-              placeholder="Email"
-              onChange={(e) => setForm({ ...form, email: e.target.value })}
-              className="p-3 bg-[#0e2040] border border-white/10 rounded text-white"
-            />
-
+          
             <div className="grid grid-cols-2 gap-3">
               <select
                 required
@@ -184,11 +179,10 @@ Requirement: ${form.msg}`;
                 <option value="">Select Type</option>
                 <option>Residential Rent</option>
                 <option>Commercial Rent</option>
-                <option>Buy Property</option>
               </select>
 
               <input
-                placeholder="Budget"
+                placeholder="Your Society"
                 onChange={(e) => setForm({ ...form, budget: e.target.value })}
                 className="p-3 bg-[#0e2040] border border-white/10 rounded text-white"
               />
@@ -196,7 +190,7 @@ Requirement: ${form.msg}`;
 
             <textarea
               rows="3"
-              placeholder="Your Requirement"
+              placeholder="Your Message"
               onChange={(e) => setForm({ ...form, msg: e.target.value })}
               className="p-3 bg-[#0e2040] border border-white/10 rounded text-white"
             />

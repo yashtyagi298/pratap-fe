@@ -83,6 +83,10 @@ const HowWeWork = () => {
               </table>
             </div>
 
+{/* ✅ YAHAN ADD KARNA HAI */}
+<p className="mt-4 text-[12px] text-yellow-400 tracking-[1px]">
+  * If your property vacates within 11 months, we will rent it out again free of cost.
+</p>
           </div>
         </div>
 

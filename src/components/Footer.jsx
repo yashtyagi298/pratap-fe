@@ -64,7 +64,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* PRICING */}
+        {/* PRICING
         <div>
           <h5 className="text-yellow-400 text-xs uppercase tracking-[3px] mb-4">
             Pricing Guide
@@ -76,7 +76,7 @@ const Footer = () => {
             <li>6BHK ₹4,500–5K</li>
             <li>Commercial: Custom</li>
           </ul>
-        </div>
+        </div> */}
 
       </div>
 
