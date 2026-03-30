@@ -6,7 +6,7 @@ const services = [
     icon: "🏘️",
     title: "Residential Rent Out",
     desc: "Curated 1BHK to 6BHK homes across Noida's prime localities. All personally verified.",
-    price: "1BHK from ₹3,000 · 2BHK from ₹3,500/mo",
+    price: "Custom pricing based on location & size",
   },
   {
     img: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80",
@@ -44,7 +44,7 @@ const Serve = () => {
           Our Services
         </h2>
         <p className="text-gray-400 text-sm max-w-md leading-relaxed">
-          From rentals to investments — every real estate need covered with transparency and care.
+          We will only charge only 0.5% of deal amount.
         </p>
       </div>
 
