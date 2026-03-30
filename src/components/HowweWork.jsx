@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 const slides = [
-  "https://images.unsplash.com/photo-1556157382-97eda2d62296", // handshake
+  "https://images.unsplash.com/photo-1686771416282-3888ddaf249b?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // handshake
   "https://images.unsplash.com/photo-1600585152915-d208bec867a1", // keys
   "https://images.unsplash.com/photo-1560518883-ce09059eeffa", // property
 ];
